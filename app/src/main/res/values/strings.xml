@@ -3,4 +3,6 @@
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="login_text">LOGIN</string>
+    <string name="feedback_text">Please send your feedback/suggestions or complaints to us..</string>
+    <string name="button_send">SEND</string>
 </resources>
