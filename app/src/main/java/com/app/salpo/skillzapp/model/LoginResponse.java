@@ -1,9 +1,10 @@
-package com.app.salpo.skillzapp;
+package com.app.salpo.skillzapp.model;
 
 /**
  * Created by imalkariyawasam on 8/23/17.
  */
 
+import com.app.salpo.skillzapp.model.Data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

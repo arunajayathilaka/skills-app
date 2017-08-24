@@ -1,4 +1,4 @@
-package com.app.salpo.skillzapp;
+package com.app.salpo.skillzapp.model;
 
 /**
  * Created by imalkariyawasam on 8/23/17.
