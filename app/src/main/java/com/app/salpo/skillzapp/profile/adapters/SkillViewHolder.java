@@ -4,9 +4,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.salpo.skillzapp.R;
+import com.app.salpo.skillzapp.profile.ProfilePresenter;
+import com.app.salpo.skillzapp.profile.editskill.EditSkillViewDialog;
+import com.app.salpo.skillzapp.profile.editskill.EditSkillViewPresenter;
 
 /**
  * Created by arunaj on 8/23/17.
@@ -19,11 +21,13 @@ public class SkillViewHolder extends RecyclerView.ViewHolder implements SkillVie
     public TextView TxtSkillType;
     public TextView rating;
     public RatingBar ratingBar;
+    ProfilePresenter profilePresenter;
 
     private SkillViewHolderPresenter viewHolderPresenter;
 
-    public SkillViewHolder (View itemView) {
+    public SkillViewHolder (View itemView, ProfilePresenter profilePresenter) {
         super(itemView);
+        this.profilePresenter = profilePresenter;
 
         viewHolderPresenter = new SkillViewHolderPresenterImpl(this);
 
@@ -32,7 +36,7 @@ public class SkillViewHolder extends RecyclerView.ViewHolder implements SkillVie
         TxtSkillType = (TextView) itemView.findViewById(R.id.skill_type);
         rating = (TextView) itemView.findViewById(R.id.rating);
         ratingBar = (RatingBar) itemView.findViewById(R.id.ratingBar);
-        
+
         itemView.setOnClickListener(this);
 
     }
@@ -70,6 +74,9 @@ public class SkillViewHolder extends RecyclerView.ViewHolder implements SkillVie
 
     @Override
     public void onClick(View view) {
-        Toast.makeText(view.getContext(), "Something went wrong. Check your input values", Toast.LENGTH_LONG).show();
+        EditSkillViewDialog editDialog=new EditSkillViewDialog(view.getContext());
+        EditSkillViewPresenter presenter =editDialog.getPresenter();
+        presenter.setupBridgeForProfile(profilePresenter);
+        presenter.showEditDialog(getAdapterPosition());
     }
 }

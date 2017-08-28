@@ -1,5 +1,7 @@
 package com.app.salpo.skillzapp.profile.adapters;
 
+import android.view.View;
+
 import com.app.salpo.skillzapp.models.Skill;
 
 /**
@@ -12,6 +14,8 @@ public class SkillViewHolderPresenterImpl implements SkillViewHolderPresenter{
     public SkillViewHolderPresenterImpl(SkillViewHolderView skillViewHolderView) {
         this.mSkillViewHolderView = skillViewHolderView;
     }
+
+
 
     @Override
     public void showSkill(Skill skill) {

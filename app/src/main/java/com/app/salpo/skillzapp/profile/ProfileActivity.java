@@ -21,11 +21,11 @@ import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity implements ProfileView, AdapterView.OnItemClickListener {
 
-    public RecyclerView     skillView;
-    public TextView         usernameView;
-    public TextView         designationView;
+    public RecyclerView skillView;
+    public TextView usernameView;
+    public TextView designationView;
     public ProfilePresenter presenter;
-    public SkillAdapter     skillAdapter;
+    public SkillAdapter skillAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,32 +54,14 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView, A
         skillAdapter.notifyDataSetChanged();
     }
 
+    /*@Override
+    public void setPresenter(ProfilePresenter _presenter) {
+        presenter = _presenter;
+    }*/
+
     @Override
     public void showEditSkillDialog(String skillType, String skillName, String rate) {
-        Toast.makeText(getApplicationContext(), "Something went wrong. Check your input values", Toast.LENGTH_LONG).show();
-       /* LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
-        View subView = inflater.inflate(R.layout.add_rem_skill_layout, null);
 
-        Spinner skillNameSpinner = (Spinner) findViewById(R.id.spinner);
-        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-
-        List<String> categories = new ArrayList<String>();
-        categories.add("Java");
-        categories.add("C#");
-        categories.add("PHP");
-        categories.add("Docker");
-        categories.add("C");
-        categories.add("AngularJS");
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        skillNameSpinner.setAdapter(dataAdapter);
-
-        skillNameSpinner.setSelection(dataAdapter.getPosition(skillName));
-        ratingBar.setRating(Float.parseFloat(rate));
-*/
 
     }
 

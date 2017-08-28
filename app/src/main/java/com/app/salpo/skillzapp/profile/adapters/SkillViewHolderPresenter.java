@@ -1,5 +1,7 @@
 package com.app.salpo.skillzapp.profile.adapters;
 
+import android.view.View;
+
 import com.app.salpo.skillzapp.models.Skill;
 
 /**

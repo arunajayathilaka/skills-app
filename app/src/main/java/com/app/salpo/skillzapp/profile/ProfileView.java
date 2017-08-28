@@ -20,6 +20,8 @@ public interface ProfileView {
 
     void notifySkillList();
 
+    //void setPresenter(ProfilePresenter presenter);
+
     void showEditSkillDialog(String skillType, String skillName, String rate);
 
     /*void setImage();

@@ -14,7 +14,7 @@ import com.app.salpo.skillzapp.profile.ProfileView;
  */
 
 public class SkillAdapter extends RecyclerView.Adapter<SkillViewHolder> {
-    private ProfileView mProfileView;
+
     private ProfilePresenter mProfilePresenter;
 
     public SkillAdapter(ProfilePresenter profilePresenter) {
@@ -24,11 +24,11 @@ public class SkillAdapter extends RecyclerView.Adapter<SkillViewHolder> {
     @Override
     public SkillViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.skill_item_layout, parent, false);
-        return new SkillViewHolder(view);
+        return new SkillViewHolder(view,mProfilePresenter);
     }
     @Override
     public void onBindViewHolder(SkillViewHolder holder, int position) {
-        mProfilePresenter.bindViewHolderRow(holder.getPresenter(),position);
+        mProfilePresenter.bindViewHolderRow(holder, position);
     }
 
     @Override
